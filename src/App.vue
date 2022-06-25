@@ -1,14 +1,15 @@
 <template>
-    <div class="app"> Hello world </div>
+    <div class="app"> <JobList :jobs="jobs" /> </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import JobList from "./components/JobList.vue";
 import Job from "./types/Job";
 
 export default defineComponent({
     name: "App",
-    components: {},
+    components: { JobList },
     setup() {
         const jobs = ref<Job[]>([
             {
@@ -48,4 +49,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+body {
+    background-color: rgb(215, 215, 250);
+}
+</style>
